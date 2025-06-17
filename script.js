@@ -176,13 +176,25 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Manejar el formulario de contacto
-    document.getElementById('contactForm')?.addEventListener('submit', function(e) {
-        e.preventDefault();
-        // Aquí puedes agregar el código para enviar el formulario
-        alert('Mensaje enviado con éxito!');
-        this.reset();
-    });
+            document.getElementById('contactForm')?.addEventListener('submit', function(e) {
+            const form = e.target;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            
+            // Feedback visual
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                Enviando...
+            `;
+            
+            // El formulario se enviará normalmente a FormSubmit
+            // Puedes agregar un setTimeout para restaurar el botón si falla
+            setTimeout(() => {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalText;
+            }, 5000);
+            });
 
     // Función para copiar texto al portapapeles
 document.querySelectorAll('.copy-btn').forEach(button => {
