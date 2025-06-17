@@ -1,0 +1,345 @@
+:root {
+    --primary-color: #6c63ff;
+    --secondary-color: #4d44db;
+    --dark-color: #2a2a72;
+    --light-color: #f8f9fa;
+}
+
+/* Efecto glass */
+.bg-glass {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.bg-glass.scrolled {
+    background: rgba(42, 42, 114, 0.9) !important;
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--dark-color), var(--secondary-color));
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    margin-bottom: 2rem;
+}
+
+.text-gradient {
+    background: linear-gradient(to right, #ff6b6b, #6c63ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+/* Proyectos */
+.projects-section {
+    background-color: var(--light-color);
+}
+
+.project-card {
+    transition: all 0.3s ease;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.project-card .card-img-top {
+    height: 200px;
+    object-fit: cover;
+    transition: all 0.5s ease;
+}
+
+.project-card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+/* Efecto partículas */
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    color: white;
+}
+
+/* Animaciones */
+.section-title span {
+    position: relative;
+}
+
+.section-title span::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--primary-color);
+    border-radius: 3px;
+}
+/* Sección Habilidades */
+.skills-section {
+    background-color: #f8f9fa;
+}
+
+.skill-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.skill-icon i {
+    transition: transform 0.3s ease;
+}
+
+.skill-card:hover .skill-icon i {
+    transform: scale(1.1);
+}
+
+/* Sección Contacto */
+/* Agrega esto a tu CSS */
+/* Estilos para la sección de contacto */
+.contact-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--dark-color), var(--secondary-color));
+}
+
+.contact-info {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.contact-info:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.contact-info h3 {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.contact-info ul li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.contact-info ul li:last-child {
+    border-bottom: none;
+}
+
+.social-icons a {
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: scale(1.1);
+    color: var(--primary-color) !important;
+}
+
+/* Estilos para los botones de copiar */
+.copy-btn {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+/* Estilo para el botón de WhatsApp */
+.btn-whatsapp {
+    background-color: #25D366;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+    background-color: #128C7E;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Alineación de elementos de contacto */
+.contact-info ul li {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.contact-info ul li span {
+    flex-grow: 1;
+}
+
+/* Estilos para la sección hero */
+.hero-section {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #2a2a72, #4d44db);
+    color: white;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.tech-badge {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contact-direct {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.contact-link {
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.contact-link:hover {
+    color: #6c63ff;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.social-icon.whatsapp:hover {
+    background: #25D366;
+}
+
+.hero-buttons .btn {
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.hero-buttons .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+/* Estilos para el botón */
+        .btn-descargar {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 24px;
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+        
+        .btn-descargar:hover {
+            background-color: #1a252f;
+            transform: translateY(-2px);
+        }
+        
+        .btn-descargar i {
+            margin-right: 10px;
+            font-size: 18px;
+        }
+/* Responsive */
+@media (max-width: 768px) {
+    .tech-stack {
+        gap: 8px;
+    }
+    
+    .tech-badge {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+    
+    .contact-direct {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .hero-buttons .btn {
+        padding: 8px 20px;
+        margin-bottom: 10px;
+    }
+}
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+}
