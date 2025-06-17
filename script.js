@@ -176,25 +176,38 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-            document.getElementById('contactForm')?.addEventListener('submit', function(e) {
-            const form = e.target;
-            const submitBtn = form.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            
-            // Feedback visual
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = `
-                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                Enviando...
-            `;
-            
-            // El formulario se enviará normalmente a FormSubmit
-            // Puedes agregar un setTimeout para restaurar el botón si falla
-            setTimeout(() => {
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = originalText;
-            }, 5000);
-            });
+    document.getElementById('contactForm')?.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const form = e.target;
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalContent = submitBtn.innerHTML;
+    
+    // Mostrar estado de carga
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = `
+        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        Enviando...
+    `;
+    
+    // Enviar el formulario
+    fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form)
+    })
+    .then(response => {
+        if (!response.ok) throw new Error('Error en el servidor');
+        window.location.href = form.querySelector('[name="_next"]').value;
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        submitBtn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Error';
+        setTimeout(() => {
+            submitBtn.innerHTML = originalContent;
+            submitBtn.disabled = false;
+        }, 2000);
+    });
+});
 
     // Función para copiar texto al portapapeles
 document.querySelectorAll('.copy-btn').forEach(button => {
