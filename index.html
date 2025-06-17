@@ -233,17 +233,13 @@
                 <div class="col-lg-6" data-aos="fade-left">
                     <div class="contact-form p-4 bg-white rounded shadow-sm">
                         <h3 class="mb-4">Envíame un Mensaje</h3>
-                        <form 
-                            id="contactForm" 
-                            action="https://formsubmit.co/elite@joseangeldiazmosquera@gmail.com" 
-                            method="POST"
-                            >
-                            <!-- Campos ocultos importantes -->
-                            <input type="hidden" name="_captcha" value="false">
+                        <form id="contactForm" action="https://formsubmit.co/joseangeldiazmosquera@gmail.com" method="POST">
+                            <!-- Configuraciones importantes -->
+                            <input type="hidden" name="_subject" value="Nuevo mensaje desde tu portafolio">
                             <input type="hidden" name="_next" value="https://tusuario.github.io/gracias.html">
                             <input type="hidden" name="_template" value="table">
-                            <input type="text" name="_honey" style="display:none">
-
+                            <input type="text" name="_honey" style="display:none"> <!-- Campo anti-spam -->
+                            
                             <!-- Campos del formulario -->
                             <div class="mb-3">
                                 <input type="text" name="name" class="form-control" placeholder="Nombre" required>
@@ -254,8 +250,10 @@
                             <div class="mb-3">
                                 <textarea name="message" class="form-control" rows="5" placeholder="Mensaje" required></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
-                            </form>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane me-1"></i> Enviar Mensaje
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
