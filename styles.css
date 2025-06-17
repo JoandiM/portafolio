@@ -46,7 +46,7 @@
 }
 
 .social-icons a {
-    color: white;
+    color: rgb(139, 136, 136);
     font-size: 1.5rem;
     margin: 0 10px;
     transition: all 0.3s ease;
